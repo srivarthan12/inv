@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- ** CORRECTED PATHS ** -->
-    <link rel="stylesheet" href="/ASPA INV/assets/css/style.css">
-    <link rel="stylesheet" href="/ASPA INV/assets/css/print.css" media="print">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/print.css" media="print">
 </head>
 <body>
 <div class="container-fluid">
