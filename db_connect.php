@@ -1,32 +1,23 @@
 <?php
-// db_connect.php
+// db_connect.php - UPDATED FOR RENDER POSTGRESQL
 
-// --- Database Credentials ---
-// Best practice: Store these in a separate, non-version-controlled file in a real-world scenario.
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root'); // Your DB username
-define('DB_PASS', '');     // Your DB password
-define('DB_NAME', 'aspa_inventory');
+$db_host = getenv('DB_HOST');
+$db_name = getenv('DB_NAME');
+$db_user = getenv('DB_USER');
+$db_pass = getenv('DB_PASS');
 
-// --- Create a PDO instance ---
 try {
-    // DSN (Data Source Name)
-    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8mb4";
-
-    // PDO Options
+    // DSN for PostgreSQL
+    $dsn = "pgsql:host={$db_host};port=5432;dbname={$db_name}";
+    
     $options = [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION, // Throw exceptions on errors
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,       // Fetch associative arrays
-        PDO::ATTR_EMULATE_PREPARES   => false,                  // Use native prepared statements
+        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ];
-
-    // Create the PDO object
-    $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
+    
+    $pdo = new PDO($dsn, $db_user, $db_pass, $options);
 
 } catch (PDOException $e) {
-    // If connection fails, stop the script and show an error
     die("Database connection failed: " . $e->getMessage());
 }
-
-// The $pdo object is now available for use in any file that includes this script.
 ?>
