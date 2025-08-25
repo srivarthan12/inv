@@ -1,0 +1,46 @@
+/* /assets/css/print.css */
+
+/* This whole stylesheet is only active when printing */
+@media print {
+
+    /* Hide everything by default */
+    body * {
+        visibility: hidden;
+    }
+
+    /* Then, make only the print section and its contents visible */
+    #print-section, #print-section * {
+        visibility: visible;
+    }
+
+    /* Position the print section at the top of the page */
+    #print-section {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 20px; /* Add some margin for the printer */
+    }
+
+    /* Remove shadows and borders for clean printing */
+    .card, .table {
+        border: none !important;
+        box-shadow: none !important;
+    }
+
+    /* Ensure table borders are clean and simple for printing */
+    .table, .table th, .table td {
+        border: 1px solid #dee2e6 !important;
+    }
+    
+    .table th {
+        font-weight: bold;
+    }
+
+    /* Add a title that only appears when printing */
+    #print-title {
+        display: block !important; /* Make it visible */
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

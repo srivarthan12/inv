@@ -1,0 +1,14 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding-top: 80px;
+}
+.nav-link.active { font-weight: bold; color: #0d6efd !important; }
+.nav-link .bi { margin-right: 8px; }
+.tag-stock-sufficient { background-color: #d1e7dd !important; color: #0f5132 !important; }
+.tag-stock-low { background-color: #fff3cd !important; color: #664d03 !important; }
+.tag-stock-zero { background-color: #f8d7da !important; color: #842029 !important; }
+
